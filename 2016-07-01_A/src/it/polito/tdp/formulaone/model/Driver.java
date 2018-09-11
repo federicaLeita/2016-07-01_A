@@ -5,27 +5,14 @@ import java.time.LocalDate;
 public class Driver {
 
 	private int driverId;
-	private String driverRef;
-	private int number;
-	private String code;
 	private String forename;
 	private String surname;
-	private LocalDate dob;
-	private String nationality;
-	private String url;
+	
 
-	public Driver(int driverId, String driverRef, int number, String code, String forename, String surname,
-			LocalDate dob, String nationality, String url) {
-		super();
+	public Driver(int driverId, String forename, String surname) {
 		this.driverId = driverId;
-		this.driverRef = driverRef;
-		this.number = number;
-		this.code = code;
 		this.forename = forename;
 		this.surname = surname;
-		this.dob = dob;
-		this.nationality = nationality;
-		this.url = url;
 	}
 
 	public int getDriverId() {
@@ -36,29 +23,7 @@ public class Driver {
 		this.driverId = driverId;
 	}
 
-	public String getDriverRef() {
-		return driverRef;
-	}
-
-	public void setDriverRef(String driverRef) {
-		this.driverRef = driverRef;
-	}
-
-	public int getNumber() {
-		return number;
-	}
-
-	public void setNumber(int number) {
-		this.number = number;
-	}
-
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
+	
 
 	public String getForename() {
 		return forename;
@@ -76,28 +41,33 @@ public class Driver {
 		this.surname = surname;
 	}
 
-	public LocalDate getDob() {
-		return dob;
+	@Override
+	public String toString() {
+		return "Driver [driverId=" + driverId + ", forename=" + forename + ", surname=" + surname + "]";
 	}
 
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + driverId;
+		return result;
 	}
 
-	public String getNationality() {
-		return nationality;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Driver other = (Driver) obj;
+		if (driverId != other.driverId)
+			return false;
+		return true;
 	}
-
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
+	
+	
 
 }

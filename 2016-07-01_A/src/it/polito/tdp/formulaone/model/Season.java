@@ -4,19 +4,19 @@ import java.time.Year;
 
 public class Season {
 
-	private Year year;
+	private int year;
 	private String url;
 
-	public Season(Year year, String url) {
+	public Season(int year, String url) {
 		this.year = year;
 		this.url = url;
 	}
 
-	public Year getYear() {
+	public int getYear() {
 		return year;
 	}
 
-	public void setYear(Year year) {
+	public void setYear(int year) {
 		this.year = year;
 	}
 
@@ -30,7 +30,7 @@ public class Season {
 
 	@Override
 	public String toString() {
-		return "Season[" + year + "]";
+		return String.valueOf(year);
 	}
 
 }
